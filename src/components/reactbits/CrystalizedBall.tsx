@@ -419,10 +419,12 @@ vec3 drift(vec4 home, vec4 seed, uint id, out float life, out float spread) {
   p += wobble * vec3(sin(t * w1 + seed.y * 40.0), cos(t * w2 + seed.z * 30.0), sin(t * (w1 + w2) * 0.5 + seed.w * 20.0));
   float cy = cos(uTurn.x);
   float sy = sin(uTurn.x);
-  p.xz = mat2(cy, -sy, sy, cy) * p.xz;
+  vec2 xzr = mat2(cy, -sy, sy, cy) * vec2(p.x, p.z);
+  p.x = xzr.x; p.z = xzr.y;
   float cx = cos(uTurn.y);
   float sx = sin(uTurn.y);
-  p.yz = mat2(cx, -sx, sx, cx) * p.yz;
+  vec2 yzr = mat2(cx, -sx, sx, cx) * vec2(p.y, p.z);
+  p.y = yzr.x; p.z = yzr.y;
   return p;
 }
 `;

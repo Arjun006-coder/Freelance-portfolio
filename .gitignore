@@ -34,4 +34,4 @@ next-env.d.ts
 
 # Source assets folder (already curated & copied into public/)
 LSFOLIO PROJECTS/
-bgms/
+/bgms/
