@@ -1,0 +1,68 @@
+.reflective-card-container {
+  perspective: 1200px;
+  display: inline-block;
+  user-select: none;
+}
+
+.reflective-card {
+  position: relative;
+  border-radius: var(--rc-radius, 24px);
+  background: #121319;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 
+    0 24px 48px -12px rgba(0, 0, 0, 0.8),
+    0 0 0 1px rgba(255, 255, 255, 0.05),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  transform-style: preserve-3d;
+  transition: transform 0.15s ease-out, box-shadow 0.3s ease;
+  overflow: hidden;
+}
+
+.reflective-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: radial-gradient(
+    circle at var(--rc-glare-x, 50%) var(--rc-glare-y, 50%),
+    rgba(255, 255, 255, 0.22) 0%,
+    rgba(0, 240, 255, 0.08) 35%,
+    rgba(148, 120, 255, 0.04) 60%,
+    transparent 80%
+  );
+  pointer-events: none;
+  z-index: 10;
+  mix-blend-mode: overlay;
+  opacity: var(--rc-glare-opacity, 0);
+  transition: opacity 0.3s ease;
+}
+
+.reflective-card__sheen {
+  position: absolute;
+  inset: -100%;
+  background: linear-gradient(
+    115deg,
+    transparent 35%,
+    rgba(255, 255, 255, 0.03) 42%,
+    rgba(255, 255, 255, 0.25) 48%,
+    rgba(0, 240, 255, 0.35) 50%,
+    rgba(255, 255, 255, 0.25) 52%,
+    rgba(255, 255, 255, 0.03) 58%,
+    transparent 65%
+  );
+  transform: translate(var(--rc-sheen-x, -50%), var(--rc-sheen-y, -50%));
+  pointer-events: none;
+  z-index: 11;
+  mix-blend-mode: color-dodge;
+  transition: transform 0.1s linear;
+}
+
+.reflective-card__noise {
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(rgba(255, 255, 255, 0.06) 1px, transparent 0);
+  background-size: 8px 8px;
+  pointer-events: none;
+  z-index: 2;
+  opacity: 0.4;
+}
