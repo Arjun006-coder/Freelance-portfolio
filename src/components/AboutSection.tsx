@@ -2,7 +2,7 @@
 
 import ReflectiveCard from './reactbits/ReflectiveCard';
 import AnimatedContent from './reactbits/AnimatedContent';
-import { ShieldCheck, Award, Zap, Code, HeartHandshake } from 'lucide-react';
+import { ShieldCheck, Award, Zap, Code, HeartHandshake, Github, ExternalLink } from 'lucide-react';
 import { useTheme } from '../context/ThemeContext';
 
 interface AboutSectionProps {
@@ -32,12 +32,12 @@ export default function AboutSection({ playTick }: AboutSectionProps) {
                   }`}
                 />
                 <ReflectiveCard
-                  name="Independent Technologist"
-                  role="Senior Fullstack & Mobile Architect"
-                  badge="Verified Top 1% Freelancer"
-                  status="Open for Contract"
-                  idLabel="FREELANCE AUTH TOKEN"
-                  idValue="LS-774-NEXT-2026"
+                  name="Arjun Sharma"
+                  role="Full-Stack Engineer & Architect"
+                  badge="Hackathon Champion (SIH & FAR AWAY)"
+                  status="Available for Contracts"
+                  idLabel="GITHUB VERIFIED"
+                  idValue="Arjun006-coder"
                   width={340}
                   height={500}
                   tiltStrength={15}
@@ -58,14 +58,14 @@ export default function AboutSection({ playTick }: AboutSectionProps) {
                 }`}
               >
                 <ShieldCheck className="w-3.5 h-3.5" />
-                <span>VERIFIED INDEPENDENT CONSULTANT</span>
+                <span>INDEPENDENT CONTRACT ENGINEER</span>
               </div>
               <h2
                 className={`text-3xl sm:text-5xl font-black tracking-tight mt-3 ${
                   isDark ? 'text-white' : 'text-gray-900'
                 }`}
               >
-                Built for founders who care about the craft.
+                Engineered with precision. Shipped with speed.
               </h2>
             </AnimatedContent>
 
@@ -75,14 +75,14 @@ export default function AboutSection({ playTick }: AboutSectionProps) {
                   isDark ? 'text-zinc-300' : 'text-gray-700'
                 }`}
               >
-                I partner directly with ambitious startups, agencies, and enterprise teams to design and build digital flagships that convert, captivate, and scale effortlessly.
+                I am an independent software engineer and UI technologist based in India, working with clients globally. Over the past several years, I have engineered mission-critical web applications, high-throughput financial backends, and tactile native iOS applications.
               </p>
               <p
                 className={`text-sm leading-relaxed mt-3 ${
                   isDark ? 'text-zinc-400' : 'text-gray-600'
                 }`}
               >
-                No endless meetings or handoffs. You work directly with a senior engineer who writes production-ready Next.js, WebGL, and iOS applications with zero generic template bloat.
+                When you hire me, you don't deal with account managers, Junior hand-offs, or generic template code. You work directly with a builder who writes robust TypeScript, builds custom WebGL shaders, integrates modern AI toolchains, and delivers production-grade apps on time.
               </p>
             </AnimatedContent>
 
@@ -96,12 +96,12 @@ export default function AboutSection({ playTick }: AboutSectionProps) {
                       : 'bg-gray-50 border-gray-200'
                   }`}
                 >
-                  <div className="flex items-center gap-2 text-cyan-500 text-sm font-bold">
+                  <div className="flex items-center gap-2 text-cyan-400 text-sm font-bold">
                     <Zap className="w-4 h-4" />
-                    <span>Extreme Speed</span>
+                    <span>Extreme Performance</span>
                   </div>
                   <p className={`text-xs ${isDark ? 'text-zinc-400' : 'text-gray-600'}`}>
-                    Targeting 100/100 Lighthouse metrics, sub-second TTFB, and zero junk JavaScript.
+                    Strict sub-second TTFB, 60fps WebGL rendering, and zero unnecessary bundle overhead.
                   </p>
                 </div>
 
@@ -112,12 +112,12 @@ export default function AboutSection({ playTick }: AboutSectionProps) {
                       : 'bg-gray-50 border-gray-200'
                   }`}
                 >
-                  <div className="flex items-center gap-2 text-purple-500 text-sm font-bold">
+                  <div className="flex items-center gap-2 text-purple-400 text-sm font-bold">
                     <Code className="w-4 h-4" />
                     <span>Clean Architecture</span>
                   </div>
                   <p className={`text-xs ${isDark ? 'text-zinc-400' : 'text-gray-600'}`}>
-                    Modular TypeScript components, fully documented and effortless for your team to maintain.
+                    Strongly-typed TypeScript, modular components, and self-documenting codebases built to scale.
                   </p>
                 </div>
 
@@ -128,12 +128,12 @@ export default function AboutSection({ playTick }: AboutSectionProps) {
                       : 'bg-gray-50 border-gray-200'
                   }`}
                 >
-                  <div className="flex items-center gap-2 text-pink-500 text-sm font-bold">
+                  <div className="flex items-center gap-2 text-pink-400 text-sm font-bold">
                     <Award className="w-4 h-4" />
-                    <span>Tactile Polish</span>
+                    <span>Tactile Spatial Craft</span>
                   </div>
                   <p className={`text-xs ${isDark ? 'text-zinc-400' : 'text-gray-600'}`}>
-                    Custom WebGL shaders, mechanical split-flap typography, and kinetic physics without AI genericism.
+                    WebGL shaders, audio-reactive frequency physics, and fluid micro-interactions with real depth.
                   </p>
                 </div>
 
@@ -144,34 +144,39 @@ export default function AboutSection({ playTick }: AboutSectionProps) {
                       : 'bg-gray-50 border-gray-200'
                   }`}
                 >
-                  <div className="flex items-center gap-2 text-emerald-500 text-sm font-bold">
+                  <div className="flex items-center gap-2 text-emerald-400 text-sm font-bold">
                     <HeartHandshake className="w-4 h-4" />
-                    <span>Direct Partnership</span>
+                    <span>Direct Transparent Comms</span>
                   </div>
                   <p className={`text-xs ${isDark ? 'text-zinc-400' : 'text-gray-600'}`}>
-                    Transparent sprint deliverables, daily async progress, and on-schedule launches.
+                    Clear daily async updates, staging environments on day 3, and guaranteed milestone deliveries.
                   </p>
                 </div>
               </div>
             </AnimatedContent>
 
-            {/* Testimonial Quote */}
+            {/* GitHub & Verified Proof links */}
             <AnimatedContent distance={30} direction="vertical" delay={0.3}>
-              <div
-                className={`p-5 rounded-2xl border-l-2 border-cyan-500 text-xs sm:text-sm italic border ${
-                  isDark
-                    ? 'bg-gradient-to-r from-white/[0.04] to-transparent border-white/5 text-zinc-300'
-                    : 'bg-cyan-50/50 border-gray-200 text-gray-700'
-                }`}
-              >
-                &ldquo;Delivered our 3D interactive web portal ahead of schedule. The micro-interactions and performance are unmatched—investors constantly praise our site.&rdquo;
-                <div
-                  className={`mt-2 text-xs font-mono font-semibold not-italic ${
-                    isDark ? 'text-white' : 'text-gray-900'
+              <div className="pt-2 flex flex-wrap items-center gap-4">
+                <a
+                  href="https://github.com/Arjun006-coder"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={() => playTick()}
+                  className={`inline-flex items-center gap-2 px-4 py-2 rounded-xl text-xs font-mono font-medium border transition-all ${
+                    isDark
+                      ? 'bg-white/[0.04] hover:bg-white/[0.09] text-zinc-300 border-white/10 hover:text-white'
+                      : 'bg-gray-100 hover:bg-gray-200 text-gray-800 border-gray-300'
                   }`}
                 >
-                  — Julian Vance, Founder @ Pulse Capital
-                </div>
+                  <Github className="w-4 h-4" />
+                  <span>github.com/Arjun006-coder</span>
+                  <ExternalLink className="w-3 h-3 opacity-60" />
+                </a>
+
+                <span className={`text-xs font-mono ${isDark ? 'text-zinc-500' : 'text-zinc-400'}`}>
+                  Based in Bengaluru, India · UTC+5:30
+                </span>
               </div>
             </AnimatedContent>
 

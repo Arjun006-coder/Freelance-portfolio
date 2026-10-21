@@ -49,21 +49,21 @@ export default function WorkSection({ projects, onSelectProject, playTick }: Wor
               }`}
             >
               <Activity className="w-3.5 h-3.5" />
-              <span>VERIFIED PRODUCTION PORTFOLIO</span>
+              <span>SELECTED ARCHIVES // 2024–2026</span>
             </div>
             <h2
               className={`text-3xl sm:text-5xl font-black tracking-tight ${
                 isDark ? 'text-white' : 'text-gray-900'
               }`}
             >
-              Engineered Works. Zero Templates.
+              Featured Works & Case Studies.
             </h2>
             <p
               className={`max-w-xl text-sm sm:text-base mt-2 ${
                 isDark ? 'text-zinc-400' : 'text-gray-600'
               }`}
             >
-              Explore dedicated categories for Web Applications & SaaS platforms and bespoke native iOS Mobile engineering.
+              Browse live SaaS platforms, orbital telemetry engines, and native iOS mobile applications built for production.
             </p>
           </AnimatedContent>
 

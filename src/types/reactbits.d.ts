@@ -32,3 +32,13 @@ declare module '@/components/reactbits/AnimatedContent' {
   const AnimatedContent: React.ComponentType<any>;
   export default AnimatedContent;
 }
+
+declare module '@/components/reactbits/GhostFibers' {
+  const GhostFibers: React.ComponentType<any>;
+  export default GhostFibers;
+}
+
+declare module '@/components/reactbits/Lightfall' {
+  const Lightfall: React.ComponentType<any>;
+  export default Lightfall;
+}

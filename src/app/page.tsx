@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useCallback, useRef } from 'react';
+import { useState, useCallback, useRef, useEffect } from 'react';
 import Navbar from '../components/Navbar';
 import HeroSection from '../components/HeroSection';
 import CarouselSection from '../components/CarouselSection';
@@ -11,6 +11,7 @@ import ContactSection from '../components/ContactSection';
 import Footer from '../components/Footer';
 import ProjectModal from '../components/ProjectModal';
 import AudioPlayerBar from '../components/AudioPlayerBar';
+import AmbientBackground, { BackgroundSwitcherPill, BackgroundMode } from '../components/AmbientBackground';
 import { PORTFOLIO_PROJECTS, ProjectItem } from '../data/portfolioData';
 import { useAudioManager } from '../hooks/useAudioManager';
 import { useTheme } from '../context/ThemeContext';
@@ -18,10 +19,32 @@ import { useTheme } from '../context/ThemeContext';
 export default function Home() {
   const [soundEnabled, setSoundEnabled] = useState(true);
   const [selectedProject, setSelectedProject] = useState<ProjectItem | null>(null);
+  const [backgroundMode, setBackgroundMode] = useState<BackgroundMode>('ghost-fibers');
   const audioCtxRef = useRef<AudioContext | null>(null);
 
   const { theme } = useTheme();
   const isDark = theme === 'dark';
+
+  // Persist background mode in localStorage if available
+  useEffect(() => {
+    try {
+      const saved = localStorage.getItem('ls_bg_mode') as BackgroundMode;
+      if (saved && (saved === 'ghost-fibers' || saved === 'lightfall' || saved === 'grid')) {
+        setBackgroundMode(saved);
+      }
+    } catch {
+      // Ignore
+    }
+  }, []);
+
+  const handleSelectBgMode = (mode: BackgroundMode) => {
+    setBackgroundMode(mode);
+    try {
+      localStorage.setItem('ls_bg_mode', mode);
+    } catch {
+      // Ignore
+    }
+  };
 
   // Background Music & Live Web Audio Frequency Analyzer
   const {
@@ -83,12 +106,18 @@ export default function Home() {
 
   return (
     <main
-      className={`min-h-screen relative transition-colors duration-300 selection:bg-[#00F0FF] selection:text-black ${
-        isDark
-          ? 'bg-[#08090C] text-[#f4f4f5] bg-grid-pattern'
-          : 'bg-[#F8F9FA] text-[#111318] bg-grid-pattern-light'
+      className={`min-h-screen relative transition-colors duration-500 selection:bg-[#00F0FF] selection:text-black ${
+        isDark ? 'text-[#f4f4f5]' : 'text-[#111318]'
       }`}
     >
+      {/* Dynamic 3D WebGL Ambient Background (GhostFibers, Lightfall, or Architectural Grid) */}
+      <AmbientBackground
+        mode={backgroundMode}
+        onModeChange={handleSelectBgMode}
+        audioData={audioData}
+        isPlaying={isPlaying}
+      />
+
       {/* Navigation with Theme Switch & Audio Trigger */}
       <Navbar
         soundEnabled={soundEnabled}
@@ -145,7 +174,14 @@ export default function Home() {
         playTick={playTick}
       />
 
-      {/* Fixed Ambient BGM Player & Frequency Visualizer */}
+      {/* Interactive Floating Background Effect Switcher (Bottom-Left) */}
+      <BackgroundSwitcherPill
+        currentMode={backgroundMode}
+        onSelectMode={handleSelectBgMode}
+        playTick={playTick}
+      />
+
+      {/* Fixed Ambient BGM Player & Frequency Visualizer (Bottom-Right) */}
       <AudioPlayerBar
         isPlaying={isPlaying}
         isMuted={isMuted}

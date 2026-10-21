@@ -88,7 +88,7 @@ export default function Navbar({
                 isDark ? 'text-white' : 'text-gray-900'
               }`}
             >
-              <span>LS</span>
+              <span>ARJUN</span>
               <span className={isDark ? 'text-cyan-400' : 'text-cyan-600'}>//</span>
               <span>FOLIO</span>
             </div>
@@ -97,7 +97,7 @@ export default function Navbar({
                 isDark ? 'text-zinc-400' : 'text-zinc-500'
               }`}
             >
-              CREATIVE TECHNOLOGIST
+              FULL-STACK & SPATIAL UI
             </div>
           </div>
         </a>
